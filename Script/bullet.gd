@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 700.0
-@export var bounce_speed: float = 450.0 # Speed after bouncing off a wall or enemy
+@export var bounce_speed: float = 450.0 #Speed after bouncing off a wall or enemy
 
 var direction: int = 1
 var is_enemy_bullet: bool = false
@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 	position.x += speed * direction * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	# 1. Hit an enemy
 	if body.is_in_group("enemy"):
 		if is_enemy_bullet and not has_bounced:
 			return
@@ -25,7 +24,6 @@ func _on_body_entered(body: Node2D) -> void:
 			body.queue_free()
 		bounce_toward_player()
 
-	# 2. Hit the player
 	elif body is CharacterBody2D:
 		if is_enemy_bullet or has_bounced:
 			get_tree().call_deferred("reload_current_scene")
@@ -33,7 +31,6 @@ func _on_body_entered(body: Node2D) -> void:
 		else:
 			return
 
-	# 3. Hit a wall or floor
 	else:
 		bounce_toward_player()
 
@@ -44,7 +41,7 @@ func bounce_toward_player() -> void:
 
 	has_bounced = true
 	is_enemy_bullet = true
-	speed = bounce_speed # Switch to the bounced bullet speed
+	speed = bounce_speed #switch to the bounced bullet speed
 
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var bullet_scene: PackedScene # Drag bullet.tscn here in the Inspector
-@export var bullet_speed: float = 400.0 # Customize Enemy 2's bullet speed in the Inspector
+@export var bullet_scene: PackedScene #drag bullet.tscn here in the Inspector
+@export var bullet_speed: float = 400.0 #customize Enemy 2's bullet speed in the Inspector
 @export var ray_distance: float = 350.0
 @export var fire_cooldown: float = 1.2
-@export var facing_direction: int = 1 # Set to -1 in Inspector if enemy faces left
+@export var facing_direction: int = 1 #set to -1 in Inspector if enemy faces left
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var raycast: RayCast2D = $RayCast2D

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var jump_velocity: float = -400.0
-@export var bullet_scene: PackedScene # Drag bullet.tscn into this slot in the Inspector!
+@export var bullet_scene: PackedScene #drag bullet.tscn into this slot in the Inspector!
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var muzzle: Marker2D = $GunMuzzle
@@ -12,7 +12,7 @@ var facing_direction: int = 1
 var muzzle_offset_x: float
 
 func _ready() -> void:
-	# Remember the gun barrel's starting X distance from the player's center
+	#remember the gun barrel's starting X distance from the player's center
 	muzzle_offset_x = abs(muzzle.position.x)
 
 func _physics_process(delta: float) -> void:
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 		facing_direction = int(sign(direction))
 		sprite.flip_h = (facing_direction < 0)
-		# Flip the gun muzzle position to match the direction the player faces
+		#flip the gun muzzle position to match the direction the player faces
 		muzzle.position.x = muzzle_offset_x * facing_direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
@@ -44,5 +44,4 @@ func shoot() -> void:
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = muzzle.global_position
 	bullet.direction = facing_direction
-	# Add bullet to the main level scene so it doesn't move with the player
 	get_tree().current_scene.add_child(bullet)
