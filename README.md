@@ -4,6 +4,8 @@ A fast-paced 2D action platformer built with **Godot Engine 4**. Battle through 
 
 <img width="1132" height="645" alt="Screenshot 2026-11-15 164349" src="https://github.com/user-attachments/assets/216ff370-7112-4548-8104-c36dc111b7f9" />
 
+Playable link:
+https://mrblxze.itch.io/astral-express
 
 ## Features
 * **360° Mouse Aiming & Shooting:** Aim freely with your cursor and fire projectiles with reload and magazine management.
