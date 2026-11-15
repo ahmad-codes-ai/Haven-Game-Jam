@@ -18,7 +18,7 @@ https://mrblxze.itch.io/astral-express
 | Action | Input |
 | :--- | :--- |
 | **Move Left / Right** | `A` / `D` or `Left` / `Right` Arrow |
-| **Jump** | `Space` / `W` / `Up` Arrow |
+| **Jump** | `Space` |
 | **Aim** | Mouse Cursor |
 | **Shoot** | `Left Click` |
 
