@@ -2,12 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b10iyh3nrxd4n" path="res://Assets/main charac1.png" id="1_ouhi1"]
 [ext_resource type="Script" uid="uid://cchdnc2opo407" path="res://Script/main_charac.gd" id="1_t7x12"]
+[ext_resource type="PackedScene" uid="uid://cua8135xrd35j" path="res://Scene/bullet.tscn" id="2_p1wqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
 size = Vector2(22.5, 30)
 
 [node name="main charac" type="CharacterBody2D" unique_id=2113342608]
 script = ExtResource("1_t7x12")
+bullet_scene = ExtResource("2_p1wqr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1839216325]
 texture = ExtResource("1_ouhi1")
@@ -15,3 +17,6 @@ texture = ExtResource("1_ouhi1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1509641254]
 position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_ql73s")
+
+[node name="GunMuzzle" type="Marker2D" parent="." unique_id=2146359285]
+position = Vector2(11, 6)
