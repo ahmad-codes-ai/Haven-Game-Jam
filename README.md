@@ -39,3 +39,5 @@ Development & Design: Blaze,Vortex,Ahmad
 Art / Sprites: Blaze,Vortex,Ahmad and from godot asset store
 
 Music & SFX: Pixaby
+
+Created with ❤️
