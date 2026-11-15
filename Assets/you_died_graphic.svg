@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a82424" />
+      <stop offset="50%" stop-color="#871919" />
+      <stop offset="100%" stop-color="#691111" />
+    </linearGradient>
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <g transform="translate(600, 165) scale(1, 1.22)">
+    <text
+      x="0"
+      y="0"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      fill="url(#crimsonGrad)"
+      filter="url(#subtleGlow)"
+      font-family="'Cinzel', 'Trajan Pro', 'OptimusPrinceps', 'Times New Roman', Georgia, serif"
+      font-size="112"
+      font-weight="400"
+      letter-spacing="18"
+    >YOU  DIED</text>
+  </g>
+</svg>

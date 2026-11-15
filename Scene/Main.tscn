@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://p5dxy53ilr8p" path="res://Scene/enemy1.tscn" id="2_g6ejq"]
 [ext_resource type="PackedScene" uid="uid://cg14pbbk4h2i2" path="res://Scene/death zone.tscn" id="4_h175a"]
 [ext_resource type="PackedScene" uid="uid://b2mp382omfppi" path="res://Scene/enemy2.tscn" id="5_togfq"]
+[ext_resource type="PackedScene" uid="uid://bwh3u84nnuerq" path="res://Scene/enemy3.tscn" id="6_aan6j"]
+[ext_resource type="PackedScene" uid="uid://b2p3gn74vfjw" path="res://Scene/enemy4.tscn" id="7_h3nmf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h175a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3nmf"]
 texture = ExtResource("1_xhtwi")
 texture_region_size = Vector2i(32, 36)
 0:0/0 = 0
@@ -78,14 +80,14 @@ texture_region_size = Vector2i(32, 36)
 [sub_resource type="TileSet" id="TileSet_2xw8o"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_h175a")
+sources/0 = SubResource("TileSetAtlasSource_h3nmf")
 
 [node name="Main" type="Node2D" unique_id=1319952708]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2032395347]
 tile_set = SubResource("TileSet_2xw8o")
 format = 2
-layer_0/tile_data = PackedInt32Array(65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 65545, 65536, 0, 131081, 65536, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 18, 0, 0, 17, 0, 0, 16, 0, 0)
+layer_0/tile_data = PackedInt32Array(65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 65545, 65536, 0, 131081, 65536, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 18, 0, 0, 17, 0, 0, 16, 0, 0, -589796, 0, 2, -524260, 0, 2, -458724, 0, 2, -393188, 0, 2, -327652, 0, 2, -262116, 0, 2, -196580, 0, 2, -131044, 0, 2, -65508, 0, 2, 27, 0, 2, 65563, 0, 2, 65562, 0, 2, 65561, 0, 2, 65560, 0, 2, 65559, 0, 2, 24, 0, 2, 25, 0, 2, 26, 0, 2, 28, 0, 2, 65531, 196608, 1, 65530, 196608, 1, 65529, 196608, 1, 65528, 196608, 1, 65527, 196608, 1, 65526, 196608, 1, 65525, 196608, 1, 65524, 196608, 1, 65523, 196608, 1, -13, 196608, 1, -14, 196608, 1, -65550, 196608, 1, -131087, 196608, 1, -196623, 196608, 1, -262159, 196608, 1, -327695, 196608, 1, -393231, 196608, 1, -458767, 196608, 1, -524302, 196608, 1, -589838, 196608, 1, -655374, 196608, 1, -720910, 196608, 1, -786446, 196608, 1, -851982, 196608, 1, -917517, 196608, 1, -983053, 196608, 1, -1048589, 196608, 1, -1048588, 196608, 1, -1114124, 196608, 1, -1179660, 196608, 1, -131086, 196608, 1, -196622, 196608, 1, -262158, 196608, 1, -327694, 196608, 1, -393230, 196608, 1, -458766, 196608, 1, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -524268, 0, 0, -524267, 0, 0, -524266, 0, 0)
 
 [node name="main charac" parent="." unique_id=2113342608 instance=ExtResource("2_djkur")]
 position = Vector2(546, -65)
@@ -97,7 +99,21 @@ limit_bottom = 250
 position = Vector2(0, 63)
 
 [node name="enemy 1" parent="." unique_id=713681290 instance=ExtResource("2_g6ejq")]
-position = Vector2(-73, -31)
+position = Vector2(-164, -85)
+facing_direction = 1
+score_value = 200
 
 [node name="enemy2" parent="." unique_id=694153191 instance=ExtResource("5_togfq")]
-position = Vector2(189, -27)
+position = Vector2(34, -48)
+ray_distance = 700.0
+
+[node name="enemy3" parent="." unique_id=1968063297 instance=ExtResource("6_aan6j")]
+position = Vector2(-327.99997, -35)
+score_value = 100
+jump_horizontal_speed = 400.0
+jump_vertical_velocity = -350.0
+
+[node name="enemy4" parent="." unique_id=1694631858 instance=ExtResource("7_h3nmf")]
+position = Vector2(7, -167)
+score_value = 50
+fly_speed = 180.0

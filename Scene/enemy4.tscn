@@ -4,14 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://1tlfp1caanrp" path="res://Assets/enemy4.png" id="1_xhj7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
-size = Vector2(10, 7.75)
+size = Vector2(39, 29.75)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1694631858]
+[node name="enemy4" type="CharacterBody2D" unique_id=1694631858]
 script = ExtResource("1_ru6gd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=556836908]
+position = Vector2(15, 11.75)
+scale = Vector2(4, 4.357143)
 texture = ExtResource("1_xhj7k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1532208998]
-position = Vector2(0, 0.125)
+position = Vector2(14.5, 11.125)
 shape = SubResource("RectangleShape2D_ql73s")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1418646123]
+position = Vector2(14, 19)
+target_position = Vector2(1, 126)
+
+[node name="RayCast2D2" type="RayCast2D" parent="RayCast2D" unique_id=1429079179]
+position = Vector2(7, -3)
+target_position = Vector2(115, 114)
+
+[node name="RayCast2D3" type="RayCast2D" parent="RayCast2D" unique_id=664541987]
+position = Vector2(7, -3)
+target_position = Vector2(-109, 110)
+
+[node name="RayCast2D4" type="RayCast2D" parent="RayCast2D" unique_id=408126996]
+position = Vector2(7, -3)
+target_position = Vector2(160, 52)
+
+[node name="RayCast2D5" type="RayCast2D" parent="RayCast2D" unique_id=1470395042]
+position = Vector2(7, -3)
+target_position = Vector2(-168, 73)

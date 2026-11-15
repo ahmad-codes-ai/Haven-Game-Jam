@@ -4,13 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://bmmhl564ca083" path="res://Assets/enemy3.png" id="1_sa7c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
-size = Vector2(16, 8)
+size = Vector2(58.38704, 35.626823)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1968063297]
+[node name="enemy3" type="CharacterBody2D" unique_id=1968063297]
+position = Vector2(23, -22)
+rotation = 0.0128160715
 script = ExtResource("1_0biai")
+move_speed = 200.0
+jump_trigger_distance = 150.0
+jump_vertical_velocity = -250.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293891898]
+position = Vector2(2.885435, 13.22119)
+rotation = -0.0019588806
+scale = Vector2(3.7920632, 4.431505)
 texture = ExtResource("1_sa7c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039555020]
+position = Vector2(3.2011414, 12.773944)
 shape = SubResource("RectangleShape2D_ql73s")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=867427898]
+position = Vector2(21.177696, 13.72972)
+target_position = Vector2(158.94849, -5.037451)
