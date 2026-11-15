@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b45uypghsrwja" path="res://Scene/main charac.tscn" id="2_djkur"]
 [ext_resource type="PackedScene" uid="uid://p5dxy53ilr8p" path="res://Scene/enemy1.tscn" id="2_g6ejq"]
 [ext_resource type="PackedScene" uid="uid://cg14pbbk4h2i2" path="res://Scene/death zone.tscn" id="4_h175a"]
+[ext_resource type="PackedScene" uid="uid://b2mp382omfppi" path="res://Scene/enemy2.tscn" id="5_togfq"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6ejq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h175a"]
 texture = ExtResource("1_xhtwi")
 texture_region_size = Vector2i(32, 36)
 0:0/0 = 0
@@ -77,22 +78,26 @@ texture_region_size = Vector2i(32, 36)
 [sub_resource type="TileSet" id="TileSet_2xw8o"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_g6ejq")
+sources/0 = SubResource("TileSetAtlasSource_h175a")
 
 [node name="Main" type="Node2D" unique_id=1319952708]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2032395347]
 tile_set = SubResource("TileSet_2xw8o")
 format = 2
-layer_0/tile_data = PackedInt32Array(65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 65545, 65536, 0, 131081, 65536, 0)
+layer_0/tile_data = PackedInt32Array(65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 65545, 65536, 0, 131081, 65536, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 18, 0, 0, 17, 0, 0, 16, 0, 0)
 
 [node name="main charac" parent="." unique_id=2113342608 instance=ExtResource("2_djkur")]
-position = Vector2(73, -21)
+position = Vector2(546, -65)
 
 [node name="Camera2D" type="Camera2D" parent="main charac" unique_id=1263239074]
-
-[node name="enemy 1" parent="." unique_id=713681290 instance=ExtResource("2_g6ejq")]
-position = Vector2(9, -17)
+limit_bottom = 250
 
 [node name="Area2D" parent="." unique_id=153257505 instance=ExtResource("4_h175a")]
 position = Vector2(0, 63)
+
+[node name="enemy 1" parent="." unique_id=713681290 instance=ExtResource("2_g6ejq")]
+position = Vector2(-73, -31)
+
+[node name="enemy2" parent="." unique_id=694153191 instance=ExtResource("5_togfq")]
+position = Vector2(189, -27)
