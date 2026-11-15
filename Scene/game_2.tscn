@@ -363,7 +363,7 @@ texture = SubResource("ImageTexture_wp5od")
 
 [node name="main charac" parent="." unique_id=2113342608 instance=ExtResource("4_kkqvx")]
 position = Vector2(-175, 282)
-scale = Vector2(1.3, 1.3)
+scale = Vector2(1.1, 1.1)
 speed = 150.0
 death_menu_path = "uid://cbvonxbd7hdsc"
 shoot_delay = 0.3

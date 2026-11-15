@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c5j1378l3i45c"]
+
+[ext_resource type="Texture2D" uid="uid://cubc33o1lfo37" path="res://Assets/10.webp" id="1_uw1tq"]
+[ext_resource type="Texture2D" uid="uid://5uw5pu7ro6hu" path="res://Assets/Congrats.png" id="2_jycx4"]
+[ext_resource type="FontFile" uid="uid://btv1hcopvectr" path="res://Assets/PixelifySans-Regular.ttf" id="2_kgfqc"]
+
+[node name="Control" type="Control" unique_id=1103777329]
+layout_mode = 3
+anchor_right = 1.2420001
+anchor_bottom = 1.33
+offset_right = 0.21582031
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="10" type="Sprite2D" parent="." unique_id=2131511868]
+position = Vector2(711.00006, 428)
+scale = Vector2(3.0041668, 3.2814815)
+texture = ExtResource("1_uw1tq")
+
+[node name="Label" type="Label" parent="." unique_id=865771854]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 577.0
+offset_right = 1243.0
+offset_bottom = 663.0
+theme_override_colors/font_color = Color(0.3096429, 0.6378774, 0.61895406, 1)
+theme_override_fonts/font = ExtResource("2_kgfqc")
+theme_override_font_sizes/font_size = 64
+text = "Created by Umer,Ahmad,Hanan."
+
+[node name="Congrats" type="Sprite2D" parent="." unique_id=1085775052]
+position = Vector2(1222, 236)
+scale = Vector2(0.22783168, 0.21260631)
+texture = ExtResource("2_jycx4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=301357117]
+position = Vector2(706, 423)
+zoom = Vector2(0.8, 0.8)
