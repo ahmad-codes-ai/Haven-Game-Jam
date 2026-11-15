@@ -7,7 +7,6 @@ extends CharacterBody2D
 @export var ray_distance: float = 350.0
 @export var fire_cooldown: float = 1.2
 @export_enum("Right:1", "Left:-1") var facing_direction: int = 1
-
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var muzzle: Marker2D = $GunMuzzle
@@ -28,10 +27,8 @@ func take_damage(_amount: int = 1) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
 	if shoot_timer > 0.0:
 		shoot_timer -= delta
-
 	if raycast.is_colliding():
 		var collider: Object = raycast.get_collider()
 		if collider is CharacterBody2D and not collider.is_in_group("enemy"):

@@ -9,7 +9,6 @@ extends CharacterBody2D
 @export var jump_vertical_velocity: float = -350.0
 @export var jump_cooldown: float = 1.2
 @export var ray_distance: float = 300.0
-
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var raycast: RayCast2D = $RayCast2D
 
@@ -31,25 +30,20 @@ func take_damage(_amount: int = 1) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
 	if jump_timer > 0.0:
 		jump_timer -= delta
-
 	if raycast.is_colliding():
 		var collider: Object = raycast.get_collider()
 		if collider is CharacterBody2D and not collider.is_in_group("enemy"):
 			is_chasing = true
 			target_player = collider as Node2D
-
 	if is_chasing and is_instance_valid(target_player):
 		var diff_x: float = target_player.global_position.x - global_position.x
 		var dir: float = signf(diff_x)
-
 		if is_on_floor():
 			if dir != 0.0:
 				sprite.flip_h = (dir < 0.0)
 				raycast.target_position.x = ray_distance * dir
-
 			if absf(diff_x) <= jump_trigger_distance and jump_timer <= 0.0:
 				velocity.y = jump_vertical_velocity
 				velocity.x = dir * jump_horizontal_speed

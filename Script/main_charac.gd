@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var invincibility_time: float = 1.0
 @export var speed: float = 300.0
 @export var jump_velocity: float = -400.0
+@export_file("*.tscn") var death_menu_path: String
 
 @export_group("Weapon & Magazine")
 @export var bullet_scene: PackedScene
@@ -17,6 +18,8 @@ extends CharacterBody2D
 @onready var muzzle: Marker2D = $GunMuzzle
 @onready var ammo_label: Label = $HUD/AmmoLabel
 @onready var score_label: Label = $HUD/ScoreLabel
+@onready var health_label: Label = $HUD/HealthLabel
+@onready var shoot_sound: AudioStreamPlayer = get_node_or_null("ShootSound")
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var health: int
@@ -34,6 +37,7 @@ func _ready() -> void:
 	health = max_health
 	current_bullets = max_bullets
 	muzzle_offset_x = absf(muzzle.position.x)
+	update_health_ui()
 	update_ammo_ui()
 
 	ScoreManager.score_changed.connect(_on_score_changed)
@@ -96,8 +100,7 @@ func update_movement_animation(direction: float) -> void:
 
 func _on_animation_finished() -> void:
 	if sprite.animation == "death":
-		ScoreManager.reset_score()
-		get_tree().call_deferred("reload_current_scene")
+		go_to_death_menu()
 	elif sprite.animation in ["shoot", "damage"]:
 		is_playing_action = false
 
@@ -105,18 +108,30 @@ func take_damage(amount: int = 1) -> void:
 	if invincible_timer > 0.0 or is_dead:
 		return
 
-	health -= amount
+	health = maxi(health - amount, 0)
 	invincible_timer = invincibility_time
+	update_health_ui()
 
 	if health <= 0:
 		is_dead = true
 		is_playing_action = true
 		velocity = Vector2.ZERO
 		sprite.modulate.a = 1.0
-		sprite.play("death")
+		if sprite.sprite_frames != null and sprite.sprite_frames.has_animation("death"):
+			sprite.play("death")
+		else:
+			go_to_death_menu()
 	else:
 		is_playing_action = true
 		sprite.play("damage")
+
+func go_to_death_menu() -> void:
+	if death_menu_path.is_empty():
+		push_warning("Player has no death_menu_path assigned! Reloading current scene instead.")
+		ScoreManager.reset_score()
+		get_tree().call_deferred("reload_current_scene")
+		return
+	get_tree().call_deferred("change_scene_to_file", death_menu_path)
 
 func shoot() -> void:
 	if bullet_scene == null or is_reloading or is_firing_delay or is_dead:
@@ -150,6 +165,9 @@ func shoot() -> void:
 	current_bullets -= 1
 	update_ammo_ui()
 
+	if shoot_sound != null:
+		shoot_sound.play()
+
 	var fire_mouse_pos: Vector2 = get_global_mouse_position()
 	var aim_direction: Vector2 = (fire_mouse_pos - muzzle.global_position).normalized()
 
@@ -172,6 +190,10 @@ func start_reload() -> void:
 	current_bullets = max_bullets
 	is_reloading = false
 	update_ammo_ui()
+
+func update_health_ui() -> void:
+	if health_label != null:
+		health_label.text = "Health: %d" % health
 
 func update_ammo_ui() -> void:
 	if ammo_label == null:

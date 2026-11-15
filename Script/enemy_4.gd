@@ -2,15 +2,12 @@ extends CharacterBody2D
 
 @export var damage: int = 1
 @export var score_value: int = 200
-
 @export_group("Roaming Area")
 @export var roam_width: float = 250.0
 @export var roam_height: float = 120.0
 @export var roam_speed: float = 100.0
-
 @export_group("Chasing")
 @export var fly_speed: float = 220.0
-
 @onready var sprite: Sprite2D = $Sprite2D
 
 var start_position: Vector2
@@ -43,7 +40,6 @@ func _physics_process(_delta: float) -> void:
 					is_chasing = true
 					target_player = collider as Node2D
 					break
-
 	if is_chasing and is_instance_valid(target_player):
 		var dir: Vector2 = (target_player.global_position - global_position).normalized()
 		velocity = dir * fly_speed
@@ -58,7 +54,6 @@ func _physics_process(_delta: float) -> void:
 			update_facing(dir.x)
 
 	move_and_slide()
-
 	if not is_chasing and get_slide_collision_count() > 0:
 		pick_new_roam_target()
 

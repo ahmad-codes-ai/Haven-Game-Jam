@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://jf47v3hf5p1g"]
+
+[ext_resource type="AudioStream" uid="uid://ehdalpadelyi" path="res://Assets/time_for_adventure.mp3" id="1_kt2l4"]
+[ext_resource type="Script" uid="uid://botdr4etulagy" path="res://Script/loop.gd" id="2_7xaxd"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=9875896]
+stream = ExtResource("1_kt2l4")
+volume_db = -2.321
+autoplay = true
+script = ExtResource("2_7xaxd")

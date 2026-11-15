@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbvonxbd7hdsc"]
 
-[ext_resource type="Texture2D" uid="uid://biskqxfh0tvxc" path="res://Assets/TARjZT.jpg" id="1_nag3b"]
+[ext_resource type="Texture2D" uid="uid://c0ftuiu64patu" path="res://Assets/TARjZT.jpg" id="1_nag3b"]
 [ext_resource type="Texture2D" uid="uid://clf2xfr4gnnuq" path="res://Assets/Code_Generated_Image (2).png" id="2_anw5y"]
 [ext_resource type="Script" uid="uid://cybnawfvh6jxt" path="res://Script/button.gd" id="3_40rnk"]
 [ext_resource type="FontFile" uid="uid://btv1hcopvectr" path="res://Assets/PixelifySans-Regular.ttf" id="3_anw5y"]
@@ -34,7 +34,7 @@ grow_vertical = 0
 scale = Vector2(0.372037, 0.40661168)
 texture_normal = ExtResource("2_anw5y")
 script = ExtResource("3_40rnk")
-target_scene = "uid://dxpplcdrk2qe8"
+target_scene = "uid://cvtrjxudwnvlf"
 
 [node name="Label" type="Label" parent="." unique_id=601256172]
 layout_mode = 0
@@ -42,7 +42,7 @@ offset_left = 220.0
 offset_top = 85.0
 offset_right = 972.0
 offset_bottom = 222.0
-theme_override_colors/font_color = Color(0.74877363, 0.29275057, 0.19833016, 1)
+theme_override_colors/font_color = Color(0.5986705, 0, 0.15565023, 1)
 theme_override_fonts/font = ExtResource("3_anw5y")
 theme_override_font_sizes/font_size = 100
 text = "Astral Express"

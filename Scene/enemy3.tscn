@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmmhl564ca083" path="res://Assets/enemy3.png" id="1_sa7c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
-size = Vector2(58.38704, 35.626823)
+size = Vector2(25.107803, 14.051538)
 
 [node name="enemy3" type="CharacterBody2D" unique_id=1968063297]
 position = Vector2(23, -22)
@@ -15,15 +15,15 @@ jump_trigger_distance = 150.0
 jump_vertical_velocity = -250.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293891898]
-position = Vector2(2.885435, 13.22119)
+position = Vector2(-13.50716, 2.6078985)
 rotation = -0.0019588806
-scale = Vector2(3.7920632, 4.431505)
+scale = Vector2(1.6091602, 1.7701595)
 texture = ExtResource("1_sa7c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039555020]
-position = Vector2(3.2011414, 12.773944)
+position = Vector2(-13.43848, 1.986309)
 shape = SubResource("RectangleShape2D_ql73s")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=867427898]
-position = Vector2(21.177696, 13.72972)
-target_position = Vector2(158.94849, -5.037451)
+position = Vector2(-13.9604025, 3.179174)
+target_position = Vector2(65.981766, -1.8457565)

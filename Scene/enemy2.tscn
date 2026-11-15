@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cua8135xrd35j" path="res://Scene/bullet.tscn" id="2_fkhb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2o78"]
-size = Vector2(39.25, 49.5)
+size = Vector2(15.25, 20.5)
 
 [node name="enemy2" type="CharacterBody2D" unique_id=694153191]
 script = ExtResource("1_4w621")
@@ -13,17 +13,17 @@ bullet_scene = ExtResource("2_fkhb3")
 bullet_speed = 250.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1980709910]
-position = Vector2(13.500001, 17.25)
-scale = Vector2(3.25, 3.3)
+position = Vector2(1.5000007, 2.7500005)
+scale = Vector2(1.25, 1.3666668)
 texture = ExtResource("1_r238g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=740931543]
-position = Vector2(13.375, 17.25)
+position = Vector2(1.375, 2.75)
 shape = SubResource("RectangleShape2D_v2o78")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1205627203]
-position = Vector2(23, 12)
+position = Vector2(0, 2)
 target_position = Vector2(97, 0)
 
 [node name="GunMuzzle" type="Marker2D" parent="." unique_id=1795331522]
-position = Vector2(31, 12)
+position = Vector2(7, 0)
