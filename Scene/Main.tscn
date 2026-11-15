@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c0vqjuhtpa3c7" path="res://Assets/tileset_32x32_v2.png" id="1_xhtwi"]
 [ext_resource type="PackedScene" uid="uid://b45uypghsrwja" path="res://Scene/main charac.tscn" id="2_djkur"]
 [ext_resource type="PackedScene" uid="uid://p5dxy53ilr8p" path="res://Scene/enemy1.tscn" id="2_g6ejq"]
+[ext_resource type="PackedScene" uid="uid://cg14pbbk4h2i2" path="res://Scene/death zone.tscn" id="4_h175a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6ejq"]
 texture = ExtResource("1_xhtwi")
@@ -83,7 +84,7 @@ sources/0 = SubResource("TileSetAtlasSource_g6ejq")
 [node name="TileMap" type="TileMap" parent="." unique_id=2032395347]
 tile_set = SubResource("TileSet_2xw8o")
 format = 2
-layer_0/tile_data = PackedInt32Array(65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0)
+layer_0/tile_data = PackedInt32Array(65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 65545, 65536, 0, 131081, 65536, 0)
 
 [node name="main charac" parent="." unique_id=2113342608 instance=ExtResource("2_djkur")]
 position = Vector2(73, -21)
@@ -92,3 +93,6 @@ position = Vector2(73, -21)
 
 [node name="enemy 1" parent="." unique_id=713681290 instance=ExtResource("2_g6ejq")]
 position = Vector2(9, -17)
+
+[node name="Area2D" parent="." unique_id=153257505 instance=ExtResource("4_h175a")]
+position = Vector2(0, 63)
